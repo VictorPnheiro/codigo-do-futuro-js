@@ -9,13 +9,13 @@ resultado = y + 5 * 9 / 7 + (h - t / T + o) - 5 * 100
 Faça um programa que resolva esta operação:
 
 <script>
-    y = prompt("Digite o valor de y:")
-    h = prompt("Digite o valor de h:")
-    t = prompt("Digite o valor de t:")
-    T = prompt("Digite o valor de T:")
-    o = prompt("Digite o valor de o:")
+    y = parseFloat(prompt("Digite o valor de y:"))
+    h = parseFloat(prompt("Digite o valor de h:"))
+    t = parseFloat(prompt("Digite o valor de t:"))
+    T = parseFloat(prompt("Digite o valor de T:"))
+    o = parseFloat(prompt("Digite o valor de o:"))
     
-    total = parseFloat(y) + 5 * 9 / 7 + (parseFloat(h) - parseFloat(t) / parseFloat(T) + parseFloat(o)) - 5 * 100
+    total = y + 5 * 9 / 7 + (h - t / T + o) - 5 * 100
     
     alert("O resultado é: " + total)
 </script>
