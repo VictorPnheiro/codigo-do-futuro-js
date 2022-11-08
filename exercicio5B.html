@@ -1,0 +1,77 @@
+<!-- Fabiana é uma pessoa muito indecisa
+e precisa juntar dinheiro para conseguir em suas férias viajar
+ela terá algumas opções a escolher com seus respectivos valores
+
+Disney = R$ 15000
+Madrid = R$ 12000
+Maceió = R$ 8000
+Ribeirão preto = R$ 5000
+
+disney = 15000
+madrid = 12000
+maceió = 8000
+ribeirãoPreto = 5000
+
+Faça um programa que solicite o nome do usuário
+o valor que o usuário tem para a viagem
+a viagem que o usuário deseja e mostre no final do programa
+se o usuário pode viajar ou se ele não pode.
+Se ele não poder viajar, mostre o quanto falta para o mesmo economizar. -->
+
+<script>
+  nome = prompt("Oi, qual o seu nome?");
+  qntPossui = Number(prompt("Quanto você possui para viagem?"));
+  destino = prompt(
+    `Qual destino? 
+    1 - Disney  
+    2 - Madrid  
+    3 - Maceió 
+    4 - Ribeirão Preto`
+  );
+
+  switch (destino) {
+    case "1":
+      rest = qntPossui - 15000;
+      if (rest <= 0) {
+        rest = rest * -1;
+        alert(`Você não pode viajar falta ${rest}`);
+      } else {
+        alert(`Passagem comprada!`);
+      }
+      break;
+
+    case "2":
+      rest = qntPossui - 12000;
+      if (rest < 0) {
+        rest = rest * -1;
+        alert(`Você não pode viajar falta ${rest}`);
+      } else {
+        alert(`Passagem comprada!`);
+      }
+      break;
+
+    case "3":
+      rest = qntPossui - 8000;
+      if (rest < 0) {
+        rest = rest * -1;
+        alert(`Você não pode viajar falta ${rest}`);
+      } else {
+        alert(`Passagem comprada!`);
+      }
+      break;
+
+    case "4":
+      rest = qntPossui - 5000;
+      if (rest < 0) {
+        rest = rest * -1;
+        alert(`Você não pode viajar falta ${rest}`);
+      } else {
+        alert(`Passagem comprada!`);
+      }
+      break;
+
+    default:
+      alert("Digite um destino valido");
+      break;
+  }
+</script>
