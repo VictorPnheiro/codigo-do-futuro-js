@@ -2,10 +2,15 @@
   let numInicial = Number(prompt("Digite o número inicial:"));
   let numFinal = Number(prompt("Digite o último número:"));
 
-  while (numInicial <= numFinal) {
-    numInicial++;
-    if (numInicial % 2 == 0) {
-      console.log(`O número ${numInicial} é par!`);
+if (numInicial > numFinal) {
+    let a = numFinal
+    numFinal = numInicial
+    numInicial = a
+    while (numInicial <= numFinal) {
+        numInicial++;
+        if (numInicial % 2 == 0) {
+            console.log(`O número ${numInicial} é par!`);
+        }
     }
-  }
+}
 </script>
