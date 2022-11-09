@@ -1,0 +1,85 @@
+<!-- Francisco precisa de um sistema para gerenciar sua escola
+Neste sistema precisamos capturar o aluno com as seguintes informações
+
+aluno
+    - nome
+    - matricula
+    - notas
+
+as notas podem ser quantas o sistema quiser, ou seja deixe o usuário escolher a quantidade de notas
+
+neste sistema você irá precisar de um menu onde irá fazer o:
+Cadastro de alunos, digitando nome e matricula e notas
+vai precisar de um relatório, onde irá mostrar a lista dos alunos
+com nome, matricula, notas, média, aprovado/reprovado/recuperação
+Critério:
+ se a nota for >= 7 aprovado
+ se a nota for entre 5 e menor que 7 - Recuperação
+ se a nota for menor que 5 -  Reprovado -->
+<script>
+  //   let alunos = [];
+  //   alunos.push({nome: "Victor", matricula: 151, notas: []}) ;
+  //   alunos.push({nome: "Victor", matricula: 151}) ;
+  //   console.log(alunos);
+  //   alunos[0].notas.push(1,2,3)
+  //   console.log(alunos.length);
+
+  var i = 0;
+  var soma = 0;
+  var num = 1;
+  let alunos = [];
+
+  let qntAluno = Number(prompt("Digite quantos alunos deseja cadastrar:"));
+
+  for (let j = 0; j < qntAluno; j++) {
+    let nome = prompt("Digite o nome do aluno:");
+    let matricula = prompt("Digite a matricula do aluno:");
+    alunos.push({ nome: nome, matricula: matricula, notas: [] });
+
+    while (true) {
+      alunos[i].notas.push(Number(prompt(`Coloque a ${num}ª nota do aluno:`)));
+      let count = Number(
+        prompt(`Deseja incluir mais notas?
+      1 - SIM
+      2 - NÃO`)
+      );
+      if (count == 1) {
+        num++;
+        continue;
+      }
+
+      for (let index = 0; index < alunos[i].notas.length; index++) {
+        soma += alunos[i].notas[index];
+      }
+      let media = soma / alunos[i].notas.length;
+      alunos[i].media = media;
+
+      if (alunos[i].media >= 7) {
+        alunos[i].status = "Aprovado!";
+      } else if (alunos[i].media < 7 && alunos[i].media >= 5) {
+        alunos[i].status = "Recuperação!";
+      } else {
+        alunos[i].status = "Reporavado!";
+      }
+
+      i++;
+      num = 1;
+      soma = 0;
+      break;
+    }
+  }
+
+  for (let index = 0; index < alunos.length; index++) {
+    let nome = alunos[index].nome;
+    let matricula = alunos[index].matricula;
+    let media = alunos[index].media.toFixed(1);
+    let status = alunos[index].status;
+    alert(`
+    Nome: ${nome}
+    Matricula: ${matricula}
+    Media: ${media}
+    Situação: ${status}`);
+  }
+
+  console.log(alunos);
+</script>
